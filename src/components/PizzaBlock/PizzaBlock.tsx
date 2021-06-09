@@ -6,6 +6,7 @@ interface PizzaBlockProps {
   price: number;
   types: number[];
   sizes: number[];
+  imageUrl: string;
 }
 
 interface IClass {
@@ -18,6 +19,7 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({
   price,
   types,
   sizes,
+  imageUrl,
 }) => {
   const [descriptionTypesPizza] = useState<string[]>([
     "тонкое",
@@ -42,11 +44,7 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({
 
   return (
     <div className="pizza-block">
-      <img
-        className="pizza-block__image"
-        src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"
-        alt="Pizza"
-      />
+      <img className="pizza-block__image" src={imageUrl} alt="Pizza" />
       <h4 className="pizza-block__title">{name}</h4>
       <div className="pizza-block__selector">
         <ul>
